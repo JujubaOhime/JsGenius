@@ -59,6 +59,8 @@ table {
         --accent: #1F6F8B;
         --letter1: #E6D5B8;
 		--letter2: #99A8B2;
+		--scrollbar: #c1c1c1;
+		--scrollbar-background: #fafafa;
 		
 		--top-icon-height: 8.66666vh;
 		--footer-play-game-height: 16.66666vh;
@@ -82,6 +84,8 @@ body{
 	background-color: var(--background);
 	font-family: 'Roboto';
 }
+
+/* Index */
 
 .icon-ranking{
 	padding-top: 3.3vh;
@@ -146,6 +150,10 @@ body{
 .play-game div:hover p{
 	color: var(--accent);
 }
+
+/* End of index */
+
+/* Game */
 
 .current-number{
 	height: calc(100vh - var(--numbers-height));
@@ -221,33 +229,40 @@ body{
 	height: var(--numbers-height);
 }
 
+/* End of Game */
 
 
 /* Ranking */
 
 .ranking-title{
-	height: var(--ranking-title-height);
-	overflow-y: hidden;
+	height: 5.33vh;
+	display: inline-flex;
+	margin-top: 3.33vh;
+	margin-bottom: 6.66vh;
+	align-items: center;
 }
 
 .ranking-title p{
 	color: var(--letter1);
-	font-size: 24px;
-	padding-top: 3.3vh;
+	font-size: 4vh;
 	text-align: center;
-	position: fixed;
-    left: 0;
-    right: 0;
+	margin: 0 auto;
+	
 
 }
 
-.ranking-title img{
-	position: fixed;
-	top: 0;
-	left: 0;
-	padding-top: 3.3vh;
-	margin-left: 5.5vw;
+.ranking-title a{
 	cursor: pointer;
+}
+
+.ranking-title img{
+	height: 5.33vh;
+}
+
+.ranking-title div{
+	height: fit-content;
+	position: fixed;
+	padding-left: 3.3vh;
 }
 
 .ranking-names{
@@ -261,8 +276,12 @@ body{
 	display: flex;
 }
 
-.ranking-names div p{
-	margin-left: 9.16vw;
+.ranking-names div p:first-of-type{
+	margin-left: 5.5vh;
+}
+
+.ranking-names div p:nth-of-type(2){
+	margin-left: 4.16vh;
 }
 
 .ranking-names:nth-of-type(1) p, .ranking-names:nth-of-type(2) p, .ranking-names:nth-of-type(3) p{
@@ -270,7 +289,7 @@ body{
 }
 
 .ranking-names p{
-	font-size: 24px;
+	font-size: 4vh;
 	color: var(--accent);
 }
 
@@ -284,13 +303,15 @@ body{
 }
 
 .listWrapper::-webkit-scrollbar{
-	width: 16px;
-	background-color: #fafafa;
+	width: 2.66vh;
+	background-color: var(--scrollbar-background);
 }
 
 .listWrapper::-webkit-scrollbar-thumb{
-	border: 4px solid #fafafa;
+	border: 4px solid var(--scrollbar-background);
 	border-radius: 10px;
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-	background-color: #c1c1c1;
+	background-color: var(--scrollbar);
 }
+
+/* End of ranking */
