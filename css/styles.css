@@ -393,6 +393,7 @@ form input[type="submit"]{
 	display: block;
 	width: 88.88%;
 	transition: 0.3s;
+	margin-top: 3.33vh;
 }
 
 form input[type="submit"]:hover{
