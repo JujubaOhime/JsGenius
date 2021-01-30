@@ -1,0 +1,220 @@
+/* Reset CSS */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* End Reset CSS */
+
+
+/* Variables */
+
+    :root{
+        --background: #1C2B2D;
+        --accent: #1F6F8B;
+        --letter1: #E6D5B8;
+		--letter2: #99A8B2;
+		
+		--top-icon-height: 8.66666vh;
+		--footer-play-game-height: 16.66666vh;
+		--current-number-height: 43.33vh;
+    }
+
+/* End variables */
+
+/* Fonts */
+
+@font-face {
+	font-family: 'Roboto';
+	src: url("../webfonts/Roboto-Regular.ttf");
+  }
+
+/* End fonts */
+
+body{
+	background-color: var(--background);
+	font-family: 'Roboto';
+}
+
+.icon-ranking{
+	padding-top: 3.3vh;
+	padding-right: 3.3vh;
+	height: var(--top-icon-height)
+}
+
+.icon-ranking img{
+	height: 5.33vh ;
+}
+
+.logo-center{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: calc(100vh - var(--top-icon-height) - var(--footer-play-game-height));
+}
+
+.logo-center img{
+	height: 6.83vh;
+}
+
+.play-game{
+    height: var(--footer-play-game-height);
+    padding-bottom: 3.33vh;
+	padding-right: 5.55vw;
+	display: flex;
+    padding-left: 5.55vw;
+    width: 100%;
+}
+
+.play-game div{
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	background-color: var(--accent);
+	border: 3px solid var(--letter2);
+	border-radius: 10px;
+	color: var(--letter1);
+	text-decoration: none;
+	font-size: 4vh;
+	transition: 0.3s;
+	
+}
+
+.play-game a{
+	color: var(--letter1);
+	text-decoration: none;
+	font-size: 4vh;
+}
+
+.play-game div:hover{
+	cursor: pointer;
+	transition: 0.3s;
+	background-color: var(--letter1);
+	border-color: var(--accent);
+}
+
+.play-game div:hover a{
+	color: var(--accent);
+}
+
+.current-number{
+	height: 43.33vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+.current-number p{
+	color: var(--letter1);
+	font-size: 94px;
+	text-align: center;
+}
+
+.current-number-frame{
+	width: 25vh;
+	height: 25vh;
+	display: flex;
+	border: 3px solid var(--letter1);
+	justify-content: center;
+	align-items: center;
+}
+
+.numbers p{
+	font-size: 64px;
+	color: var(--letter2);
+}
+
+.numbers{
+	
+}
+
+.row, .col{
+	margin: 0px;
+	padding: 0px;
+	transition: 0.3s;
+}
+
+.col{
+	height: 18.16vh;
+	width: 18.16vh;
+	border-top: 3px solid var(--accent);
+	border-left: 3px solid var(--accent);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.n7, .n8, .n9{
+	border-bottom: 3px solid var(--accent);
+}
+
+.n3, .n6, .n9{
+	border-right: 3px solid var(--accent);
+}
+.col:hover{
+	transition: 0.3s;
+	background-color: var(--accent);
+	cursor: pointer;
+}
+
+.col:hover p{
+	color: var(--letter1);
+}
+
+.container-number{
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	height: calc(100vh - var(--current-number-height));
+}
+
