@@ -131,6 +131,7 @@ body{
 	color: var(--letter1);
 	text-decoration: none;
 	font-size: 4vh;
+	width: 100%;
 }
 
 .play-game div:hover{
@@ -140,7 +141,7 @@ body{
 	border-color: var(--accent);
 }
 
-.play-game div:hover a{
+.play-game div:hover p{
 	color: var(--accent);
 }
 
@@ -179,7 +180,6 @@ body{
 .row, .col{
 	margin: 0px;
 	padding: 0px;
-	transition: 0.3s;
 }
 
 .col{
@@ -190,6 +190,8 @@ body{
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	transition: 0.3s;
+	transition-timing-function:cubic-bezier(0.445, 0.05, 0.55, 0.95);
 
 }
 
@@ -204,6 +206,7 @@ body{
 	transition: 0.3s;
 	background-color: var(--accent);
 	cursor: pointer;
+	transition-timing-function: ease-in-out;
 }
 
 .col:hover p{
