@@ -165,7 +165,7 @@ body{
 
 .current-number p{
 	color: var(--letter1);
-	font-size: 94px;
+	font-size: 15.66vh;
 	text-align: center;
 }
 
@@ -179,7 +179,7 @@ body{
 }
 
 .numbers p{
-	font-size: 64px;
+	font-size: 10.66vh;
 	color: var(--letter2);
 }
 
@@ -222,9 +222,9 @@ body{
 .container-number{
 	display: flex;
 	justify-content: center;
-	padding-right: 20px;
-	padding-left: 20px;
-	padding-bottom: 20px;
+	padding-right: 3.3vh;
+	padding-left: 3.3vh;
+	padding-bottom: 3.3vh;
 	align-items: center;
 	height: var(--numbers-height);
 }
@@ -315,3 +315,91 @@ body{
 }
 
 /* End of ranking */
+
+/* End-Game */
+
+
+
+/* End of End-Game */
+
+.icon-close{
+
+	padding-top: 3.3vh;
+	padding-right: 3.3vh;
+	height: var(--top-icon-height);
+	display: flex;
+	justify-content: flex-end;
+	margin-bottom: 6.66vh;
+
+}
+
+.end-game{
+	height: 25.66vh;
+}
+
+.end-game p{
+	font-size: 8vh;
+	text-align: center;
+	margin: 0 auto;
+	color: var(--letter1);
+}
+
+.score{
+	height: 25.66vh;
+}
+
+.score p{
+	text-align: center;
+	margin: 0 auto;
+	color: var(--letter1);
+}
+
+.score p:nth-of-type(1){
+	font-size: 3vh;
+}
+.score p:nth-of-type(2){
+	font-size: 16vh;
+}
+
+form input[type="text"]{
+    background: transparent;
+	color: var(--letter2);
+	outline: none;
+	border: 3px solid var(--accent);
+	height: 13.33vh;
+	font-size: 4vh;
+	border-radius: 10px;
+	text-indent: 3.5vh;
+	margin: 0 auto;
+	display: block;
+	width: 88.88%;
+
+}
+
+form input::placeholder{
+	color: var(--letter2);
+	margin-left: 3.5vh;
+	font-size: 4vh;
+}
+
+form input[type="submit"]{
+    background: var(--accent);
+	color: var(--letter1);
+	border: 3px solid var(--letter2);
+	height: 13.33vh;
+	font-size: 4vh;
+	border-radius: 10px;
+	margin: 0 auto;
+	display: block;
+	width: 88.88%;
+	transition: 0.3s;
+}
+
+form input[type="submit"]:hover{
+	transition: 0.3s;
+    background: var(--letter1);
+	color: var(--accent);
+	border: 3px solid var(--accent);
+
+}
+
