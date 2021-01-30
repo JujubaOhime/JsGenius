@@ -173,10 +173,6 @@ body{
 	color: var(--letter2);
 }
 
-.numbers{
-	
-}
-
 .row, .col{
 	margin: 0px;
 	padding: 0px;
