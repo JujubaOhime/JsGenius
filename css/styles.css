@@ -64,6 +64,7 @@ table {
 		--footer-play-game-height: 16.66666vh;
 		--current-number-height: 43.33vh;
 		--numbers-height: 56.66vh;
+		--ranking-title-height: 15.3vh;
     }
 
 /* End variables */
@@ -220,3 +221,76 @@ body{
 	height: var(--numbers-height);
 }
 
+
+
+/* Ranking */
+
+.ranking-title{
+	height: var(--ranking-title-height);
+	overflow-y: hidden;
+}
+
+.ranking-title p{
+	color: var(--letter1);
+	font-size: 24px;
+	padding-top: 3.3vh;
+	text-align: center;
+	position: fixed;
+    left: 0;
+    right: 0;
+
+}
+
+.ranking-title img{
+	position: fixed;
+	top: 0;
+	left: 0;
+	padding-top: 3.3vh;
+	margin-left: 5.5vw;
+	cursor: pointer;
+}
+
+.ranking-names{
+	display: flex;
+	justify-content: space-between;
+	height: 7.5vh;
+	align-items: center;
+}
+
+.ranking-names div{
+	display: flex;
+}
+
+.ranking-names div p{
+	margin-left: 9.16vw;
+}
+
+.ranking-names:nth-of-type(1) p, .ranking-names:nth-of-type(2) p, .ranking-names:nth-of-type(3) p{
+	color: var(--letter2);
+}
+
+.ranking-names p{
+	font-size: 24px;
+	color: var(--accent);
+}
+
+.ranking-score{
+	margin-right: 5.83vw;
+}
+
+.listWrapper{
+	max-height:calc(100vh - var(--ranking-title-height));
+	overflow-y:auto;
+}
+
+.listWrapper::-webkit-scrollbar{
+	width: 16px;
+	background-color: #fafafa;
+}
+
+.listWrapper::-webkit-scrollbar-thumb{
+	border: 4px solid #fafafa;
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #c1c1c1;
+}
