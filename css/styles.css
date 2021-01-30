@@ -383,6 +383,7 @@ form input::placeholder{
 }
 
 form input[type="submit"]{
+	outline: none;
     background: var(--accent);
 	color: var(--letter1);
 	border: 3px solid var(--letter2);
