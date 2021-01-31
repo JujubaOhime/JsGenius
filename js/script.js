@@ -35,8 +35,10 @@ var score = 0
 var numbers = []
 var numbersInput = []
 var counter = 0;
+var j = 0
 
 $(".current-number-frame p").text(randomNumber);
+$('.current-number-frame p').fadeOut(500)
 numbers.push(randomNumber)
 
 
@@ -55,21 +57,28 @@ $(".numbers .row .col").on('click', function () {
         i = 0
         randomNumber = Math.floor(Math.random() * 9) + 1;
         numbers.push(randomNumber);
+        numbers.push(" ");
         numbersInput = []
         score = score + 1
-        var j = 0;
-        var elem = $(".current-number-frame p")
-        setInterval(change, 300);
-        function change() {
-            elem.fadeOut(function(){
-                elem.html(numbers[j]);
-                j++;
-                if(j >= numbers.length) {return }
-                elem.fadeIn();
-            });
+        j = 0;
+        function myLoop(){
+            setTimeout(function(){
+                $('.current-number-frame p').fadeOut(0)
+                $('.current-number-frame p').html(numbers[j]).fadeToggle(100);
+                j = j + 1
+                if (j < numbers.length){
+                    myLoop();
+                }
+            }, 400)
         }
+        myLoop()
+
     }
     sleep(100)
+    if(j == numbers.length){
+        numbers.pop()
+    }
+    
 
 });
 
