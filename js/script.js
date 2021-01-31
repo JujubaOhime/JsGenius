@@ -57,20 +57,17 @@ $(".numbers .row .col").on('click', function () {
         numbers.push(randomNumber);
         numbersInput = []
         score = score + 1
-        var j = 0
-        function myLoop(){
-            setTimeout(function(){
-                $('.current-number-frame p').fadeOut(0, function()
-                {     
-                    $(this).html(numbers[j]).fadeIn(100);
-                });
-                j = j + 1
-                if (j < numbers.length){
-                    myLoop();
-                }
-            }, 300)
+        var j = 0;
+        var elem = $(".current-number-frame p")
+        setInterval(change, 300);
+        function change() {
+            elem.fadeOut(function(){
+                elem.html(numbers[j]);
+                j++;
+                if(j >= numbers.length) {return }
+                elem.fadeIn();
+            });
         }
-        myLoop()
     }
     sleep(100)
 
@@ -78,20 +75,7 @@ $(".numbers .row .col").on('click', function () {
 
 $(".score-number").text(sessionStorage.getItem("score"));
 
-$.fn.extend({
-    disableSelection: function() {
-        this.each(function() {
-            this.onselectstart = function() {
-                return false;
-            };
-            this.unselectable = "on";
-            $(this).css('-moz-user-select', 'none');
-            $(this).css('-webkit-user-select', 'none');
-        });
-    }
-});
 
-$('.numbers .row .col').disableSelection();
      
 
 
