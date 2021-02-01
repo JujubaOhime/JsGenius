@@ -1,28 +1,60 @@
+var urlget = "https://cors-anywhere.herokuapp.com/https://us-central1-prova-front-letras.cloudfunctions.net/ranking"
+var urlpost = "https://cors-anywhere.herokuapp.com/https://us-central1-prova-front-letras.cloudfunctions.net/save"
+
+
 $(".form-end-game").submit(function (e) {
 
     e.preventDefault();
+    
     var score = parseInt($(".score-number").text())
     var name = $(".name-form").val()
-    console.log(score, name)
-
-    var data = ({
-        "name": name, "score": score
-    })
+    var data = {
+    "name": name, "score": score
+    }
 
     $.ajax({
-        type: "POST",
+        url: urlpost,
+        type:"POST",
+        dataType: "jsonp",
+        contentType: "application/json",
         crossDomain: true,
-        headers: {
-            'Access-Control-Allow-Origin': "*", 'Access-Control-Allow-Origin': '*',
-            'Content-Type': 'application/json'
-        },
-        dataType: 'jsonp',
-        url: 'https://us-central1-prova-front-letras.cloudfunctions.net/save',
-        data: data
-    });
+        cache: true,
+        data: data,
+        headers: {"Access-Control-Allow-Origin" : "*",
+         "Access-Control-Allow-Credentials" : true,
+         "X-Requested-With": "XMLHttpRequest"}, 
+        success: function(response){
+            console.log("a")
+            //console.log((response[0].name))
+        }
+    })
+
+
+
+    
+
+
 
 
 });
+
+$( document ).ready(function() {
+
+    $.ajax({
+        url: urlget,
+        dataType: "json",
+        contentType: "application/json",
+        crossDomain: true,
+        cache: true,
+        headers: {"Access-Control-Allow-Origin" : "*", "Access-Control-Allow-Credentials" : true}, 
+        success: function(response){
+            //console.log("a")
+            console.log((response[0].name))
+        }
+    })
+});
+
+/* Script Gaming */
 
 function sleep(delay) {
     var start = new Date().getTime();
@@ -38,7 +70,7 @@ var counter = 0;
 var j = 0
 
 $(".current-number-frame p").text(randomNumber);
-$('.current-number-frame p').fadeOut(500)
+$('.current-number-frame p').fadeOut(1000)
 numbers.push(randomNumber)
 
 
@@ -84,7 +116,4 @@ $(".numbers .row .col").on('click', function () {
 
 $(".score-number").text(sessionStorage.getItem("score"));
 
-
-     
-
-
+/* End script Gaming */
