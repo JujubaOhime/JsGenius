@@ -60,8 +60,9 @@ $(document).ready(function () {
                 console.log("foi")
                 var html = " "
                 var size = response.length - 1
+                var position = 0
                 for (i = size; i > 0; i--) {
-                    var position = i + 1;
+                    position = position + 1
                     html = html + "<li class='ranking-names'> <div> <p>" + position + "</p> <p>" + response[i].name + "</p>"
                     html = html + "</div> <p class='ranking-score'>" + response[i].score + "</p> </li>"
                 }
