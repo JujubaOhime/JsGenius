@@ -29,7 +29,7 @@ $(".form-end-game").submit(function (e) {
             "X-Requested-With": "XMLHttpRequest",
             "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Methods": "POST",
-            "Access-Control-Allow-Credentials": true,
+            "Access-Control-Allow-Headers": "*",
         },
         success: function (response) {
             console.log("a")
