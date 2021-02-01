@@ -5,25 +5,27 @@ var urlpost = "https://cors-anywhere.herokuapp.com/https://us-central1-prova-fro
 $(".form-end-game").submit(function (e) {
 
     e.preventDefault();
-    
+
     var score = parseInt($(".score-number").text())
     var name = $(".name-form").val()
     var data = {
-    "name": name, "score": score
+        "name": name, "score": score
     }
 
     $.ajax({
         url: urlpost,
-        type:"POST",
+        type: "POST",
         dataType: "jsonp",
         contentType: "application/json",
         crossDomain: true,
         cache: true,
         data: data,
-        headers: {"Access-Control-Allow-Origin" : "*",
-         "Access-Control-Allow-Credentials" : true,
-         "X-Requested-With": "XMLHttpRequest"}, 
-        success: function(response){
+        headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Credentials": true,
+            "X-Requested-With": "XMLHttpRequest"
+        },
+        success: function (response) {
             console.log("a")
             //console.log((response[0].name))
         }
@@ -31,27 +33,45 @@ $(".form-end-game").submit(function (e) {
 
 
 
-    
+
 
 
 
 
 });
 
-$( document ).ready(function() {
+$(document).ready(function () {
 
-    $.ajax({
-        url: urlget,
-        dataType: "json",
-        contentType: "application/json",
-        crossDomain: true,
-        cache: true,
-        headers: {"Access-Control-Allow-Origin" : "*", "Access-Control-Allow-Credentials" : true}, 
-        success: function(response){
-            //console.log("a")
-            console.log((response[0].name))
-        }
-    })
+    if (location.pathname.indexOf("/ranking.html")) {
+        console.log("foi")
+        $.ajax({
+            url: urlget,
+            dataType: "json",
+            type: "GET",
+            contentType: "application/json",
+            crossDomain: true,
+            cache: true,
+            headers: {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Credentials": true,
+                "X-Requested-With": "XMLHttpRequest"
+            },
+            success: function (response) {
+                console.log("foi")
+                var html = " "
+                var size = response.length - 1
+                for (i = size; i > 0; i--) {
+                    var position = i + 1;
+                    html = html + "<li class='ranking-names'> <div> <p>" + position + "</p> <p>" + response[i].name + "</p>"
+                    html = html + "</div> <p class='ranking-score'>" + response[i].score + "</p> </li>"
+                }
+                $(".listWrapper ul").append(html)
+
+            }
+        })
+    }
+
+
 });
 
 /* Script Gaming */
@@ -93,12 +113,12 @@ $(".numbers .row .col").on('click', function () {
         numbersInput = []
         score = score + 1
         j = 0;
-        function myLoop(){
-            setTimeout(function(){
+        function myLoop() {
+            setTimeout(function () {
                 $('.current-number-frame p').fadeOut(0)
                 $('.current-number-frame p').html(numbers[j]).fadeToggle(100);
                 j = j + 1
-                if (j < numbers.length){
+                if (j < numbers.length) {
                     myLoop();
                 }
             }, 400)
@@ -107,10 +127,10 @@ $(".numbers .row .col").on('click', function () {
 
     }
     sleep(100)
-    if(j == numbers.length){
+    if (j == numbers.length) {
         numbers.pop()
     }
-    
+
 
 });
 
