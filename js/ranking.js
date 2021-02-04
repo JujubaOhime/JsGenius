@@ -13,6 +13,8 @@ $(document).ready(function () {
             "X-Requested-With": "XMLHttpRequest"
         },
         success: function (response) {
+            $(".loader").remove()
+            $(".listWrapper").css("display", "block")
             var html = " "
             var size = response.length - 1
             var position = 0
@@ -34,6 +36,13 @@ $(document).ready(function () {
             }
             $(".listWrapper ul").append(html)
 
+        },
+        error: function(error){
+            $(".loader").remove()
+            console.log(error)
+            var html = "<p>Desculpe, não está funcionando no momento <br>"
+            html = html + error.responseText + "</p>"
+            $(".listWrapper").append(html)
         }
     })
 });
