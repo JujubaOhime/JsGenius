@@ -196,7 +196,7 @@ body{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	transition: 0.3s;
+	transition: 0.2s;
 	transition-timing-function:cubic-bezier(0.445, 0.05, 0.55, 0.95);
 
 }
@@ -209,7 +209,7 @@ body{
 	border-right: 3px solid var(--accent);
 }
 .col:hover{
-	transition: 0.3s;
+	transition: 0.2s;
 	background-color: var(--accent);
 	cursor: pointer;
 	transition-timing-function: ease-in-out;
@@ -327,10 +327,6 @@ body{
 
 /* End-Game */
 
-
-
-/* End of End-Game */
-
 .icon-close{
 
 	padding-top: 3.3vh;
@@ -414,3 +410,4 @@ form input[type="submit"]:hover{
 
 }
 
+/* End of End-Game */
