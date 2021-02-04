@@ -22,9 +22,10 @@ $(".form-end-game").submit(function (e) {
         dataType: "xml",
         contentType: "application/json",
         crossDomain: true,
-        cache: false,
+        cache: true,
         data: data,
         headers: {
+            "Access-Control-Allow-Credentials": true,
             "accept": "application/json",
             "X-Requested-With": "XMLHttpRequest",
             "Access-Control-Allow-Origin": "*",
