@@ -37,6 +37,16 @@ function playSound(number, time, synth) {
 
 
 $(document).ready(function(){
+
+    $('.numbers .row .col').keydown(function(e) {
+        if (e.keyCode==39) {
+          $(this).nextAll('.numbers .row .col:first').focus();
+        }
+        if (e.keyCode==37) {
+          $(this).prev('.numbers .row .col:first').focus();
+        }
+      });
+
     const synth = new Tone.Synth().toDestination();
     var randomNumber = Math.floor(Math.random() * 9) + 1;
     //playSound(randomNumber, "4n", synth)

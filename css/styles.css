@@ -196,7 +196,9 @@ body{
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	background: none;
 	transition: 0.2s;
+	outline: none;
 	transition-timing-function:cubic-bezier(0.445, 0.05, 0.55, 0.95);
 
 }

@@ -28,7 +28,7 @@ $(document).ready(function () {
                   // a must be equal to b
                   return 0;
             })
-            for (i = size; i > 0; i--) {
+            for (i = size; i > -1; i--) {
 
                 position = position + 1
                 html = html + "<li class='ranking-names'> <div> <p>" + position + "</p> <p>" + response[i].name + "</p>"

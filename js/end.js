@@ -14,8 +14,7 @@ $(".form-end-game").submit(function (e) {
         "name": name, "score": score
     }
     data = JSON.stringify(data)
-    console.log("a")
-    
+    if(name.length)
     $.ajax({
         url: urlpost,
         type: "POST",
