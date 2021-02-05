@@ -1,7 +1,7 @@
 $(".score-number").text(sessionStorage.getItem("score"));
 
 var urlget = "https://cors-anywhere.herokuapp.com/https://us-central1-prova-front-letras.cloudfunctions.net/ranking"
-var urlpost = "https://us-central1-prova-front-letras.cloudfunctions.net/save"
+var urlpost = "https://cors-anywhere.herokuapp.com/https://us-central1-prova-front-letras.cloudfunctions.net/save"
 
 
 $(".form-end-game").submit(function (e) {
@@ -14,28 +14,30 @@ $(".form-end-game").submit(function (e) {
         "name": name, "score": score
     }
     data = JSON.stringify(data)
-    console.log(data)
-
+    console.log("a")
+    
     $.ajax({
         url: urlpost,
         type: "POST",
-        dataType: "xml",
-        contentType: "application/json",
+        dataType: "json",
+        contentType: "application/xml",
+        cors: true ,
         crossDomain: true,
         cache: true,
         data: data,
         headers: {
             "Access-Control-Allow-Credentials": true,
-            "accept": "application/json",
             "X-Requested-With": "XMLHttpRequest",
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Methods": "POST",
-            "Access-Control-Allow-Headers": "*",
+            "Access-Control-Allow-Origin": "https://us-central1-prova-front-letras.cloudfunctions.net/save",
+            "Access-Control-Allow-Methods": "POST, GET, OPTIONS, DELETE, PUT",
+            "Access-Control-Allow-Headers": "Origin, x-Requested-With, Content-Type, Accept, Access-Control-Request-Method,Access-Control-Request-Headers, Authorization",
         },
-        success: function (response) {
-            console.log("a")
+        success:function(response){
+            alert("foi!")
+            window.location.href = "ranking.html"
             //console.log((response[0].name))
-        }
+        },
+        
     })
-
-});
+    
+    });

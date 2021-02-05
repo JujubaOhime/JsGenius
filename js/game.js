@@ -27,10 +27,10 @@ function playSound(number, time, synth) {
         synth.triggerAttackRelease("B4", time);
     }
     else if(number == 8){
-        synth.triggerAttackRelease("D5", time);
+        synth.triggerAttackRelease("C5", time);
     }
     else if(number == 9){
-        synth.triggerAttackRelease("E5", time);
+        synth.triggerAttackRelease("D5", time);
     }
 
 };
