@@ -88,8 +88,12 @@ $(document).ready(function(){
 
 
     $(".numbers .row .col").on('click', function () {
-        
 
+        var elem = $(this)
+        elem.css('background-color', 'var(--accent)')
+        setTimeout(function() {
+            elem.css('background-color', 'rgba(0, 0, 0, 0)');
+          }, 300);
         var number = $(this).text();
         numbersInput.push(number)
 
