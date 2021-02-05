@@ -279,12 +279,18 @@ body{
 .ranking-names{
 	display: flex;
 	justify-content: space-between;
-	height: 7.5vh;
+	margin-bottom: 3.83vh;
+	margin-top: 3.83vh;
 	align-items: center;
+}
+
+.ranking-names:nth-of-type(1){
+	margin-top: 0px;
 }
 
 .ranking-names div{
 	display: flex;
+	align-items: center;
 }
 
 .ranking-names div p:first-of-type{
@@ -320,7 +326,6 @@ body{
 .listWrapper p{
 	font-size: 4vh;
 	color: var(--accent);
-	text-align: center;
 }
 
 .listWrapper::-webkit-scrollbar{
