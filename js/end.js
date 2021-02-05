@@ -1,7 +1,7 @@
 $(".score-number").text(sessionStorage.getItem("score"));
 
-var urlget = "https://cors-anywhere.herokuapp.com/https://us-central1-prova-front-letras.cloudfunctions.net/ranking"
-var urlpost = "https://cors-anywhere.herokuapp.com/https://us-central1-prova-front-letras.cloudfunctions.net/save"
+var urlget = "https://young-reaches-88428.herokuapp.com/https://us-central1-prova-front-letras.cloudfunctions.net/ranking"
+var urlpost = "https://young-reaches-88428.herokuapp.com/https://us-central1-prova-front-letras.cloudfunctions.net/save"
 
 
 $(".form-end-game").submit(function (e) {
@@ -33,11 +33,10 @@ $(".form-end-game").submit(function (e) {
             "Access-Control-Allow-Headers": "Origin, x-Requested-With, Content-Type, Accept, Access-Control-Request-Method,Access-Control-Request-Headers, Authorization",
         },
         success:function(response){
-            alert("foi!")
             window.location.href = "ranking.html"
             //console.log((response[0].name))
         },
-        
+
     })
     
     });
