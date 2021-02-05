@@ -95,7 +95,22 @@ body{
 
 .icon-ranking img{
 	height: 5.33vh ;
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	-webkit-transition-property: transform;
+	transition-property: transform;
+	-webkit-transform: perspective(1px) translateZ(0);
+  	transform: perspective(1px) translateZ(0);
+  	box-shadow: 0 0 1px rgba(0, 0, 0, 0);
 }
+
+.icon-ranking img:hover{
+	
+	-webkit-transform: scale(0.9);
+	transform: scale(0.9);
+
+}
+
 
 .logo-center{
 	display: flex;
@@ -136,7 +151,13 @@ body{
 	color: var(--letter1);
 	text-decoration: none;
 	font-size: 4vh;
-	transition: 0.3s;
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	-webkit-transition-property: transform;
+	transition-property: transform;
+	-webkit-transform: perspective(1px) translateZ(0);
+  	transform: perspective(1px) translateZ(0);
+  	box-shadow: 0 0 1px rgba(0, 0, 0, 0);
 	
 }
 
@@ -148,15 +169,12 @@ body{
 }
 
 .play-game div:hover{
-	cursor: pointer;
-	transition: 0.3s;
-	background-color: var(--letter1);
-	border-color: var(--accent);
+	-webkit-transform: scale(0.9);
+  	transform: scale(0.9);
+	cursor: url("../images/cursor.svg"), auto;
 }
 
-.play-game div:hover p{
-	color: var(--accent);
-}
+
 
 #game{
 	display: none;
@@ -199,8 +217,10 @@ body{
 .col{
 	height: 17.5vh;
 	width: 17.5vh;
-	border-top: 3px solid var(--accent);
-	border-left: 3px solid var(--accent);
+	border-top: 4px solid var(--accent);
+	border-left: 4px solid var(--accent);
+	border-right: none;
+	border-bottom: none;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -209,6 +229,11 @@ body{
 	outline: none;
 	transition-timing-function:cubic-bezier(0.445, 0.05, 0.55, 0.95);
 
+
+}
+
+.col:hover{
+	cursor: url("../images/cursor.svg"), auto;
 }
 
 .col:focus{
@@ -217,11 +242,11 @@ body{
 }
 
 .n7, .n8, .n9{
-	border-bottom: 3px solid var(--accent);
+	border-bottom:4px solid var(--accent);
 }
 
 .n3, .n6, .n9{
-	border-right: 3px solid var(--accent);
+	border-right: 4px solid var(--accent);
 }
 
 .sk-chase {
@@ -327,6 +352,18 @@ body{
 
 .ranking-title img{
 	height: 5.33vh;
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	-webkit-transition-property: transform;
+	transition-property: transform;
+	-webkit-transform: perspective(1px) translateZ(0);
+  	transform: perspective(1px) translateZ(0);
+  	box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+
+.ranking-title img:hover{
+	-webkit-transform: scale(0.9);
+	transform: scale(0.9);
 }
 
 .ranking-title div{
@@ -473,6 +510,21 @@ body{
 
 }
 
+.icon-close img{
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	-webkit-transition-property: transform;
+	transition-property: transform;
+	-webkit-transform: perspective(1px) translateZ(0);
+  	transform: perspective(1px) translateZ(0);
+  	box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+
+.icon-close img:hover{
+	-webkit-transform: scale(0.9);
+	transform: scale(0.9);
+}
+
 .end-game{
 	height: 25.66vh;
 }
@@ -533,15 +585,20 @@ form input[type="submit"]{
 	margin: 0 auto;
 	display: block;
 	width: 88.88%;
-	transition: 0.3s;
 	margin-top: 3.33vh;
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	-webkit-transition-property: transform;
+	transition-property: transform;
+	-webkit-transform: perspective(1px) translateZ(0);
+  	transform: perspective(1px) translateZ(0);
+  	box-shadow: 0 0 1px rgba(0, 0, 0, 0);
 }
 
 form input[type="submit"]:hover{
-	transition: 0.3s;
-    background: var(--letter1);
-	color: var(--accent);
-	border: 3px solid var(--accent);
+	cursor: url("../images/cursor.svg"), auto;
+	-webkit-transform: scale(0.9);
+	transform: scale(0.9);
 
 }
 
