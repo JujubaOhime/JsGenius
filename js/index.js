@@ -88,9 +88,9 @@ function beginGame() {
         playSound(randomNumber, "32n", synth)
         $(".sk-chase").remove()
         $(".current-number-frame p").text(randomNumber);
-        $('.current-number-frame p').fadeOut(500)
+        $('.current-number-frame p').fadeOut(300)
         
-      }, 3000);
+      }, 1500);
 
     
     numbers.push(randomNumber)
