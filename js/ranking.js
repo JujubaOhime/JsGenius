@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    var urlget = "https://cors-anywhere.herokuapp.com/https://us-central1-prova-front-letras.cloudfunctions.net/ranking"
+    var urlget = "https://young-reaches-88428.herokuapp.com/https://us-central1-prova-front-letras.cloudfunctions.net/ranking"
     $.ajax({
         url: urlget,
         dataType: "json",
@@ -8,7 +8,7 @@ $(document).ready(function () {
         crossDomain: true,
         cache: true,
         headers: {
-            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Origin": "https://us-central1-prova-front-letras.cloudfunctions.net/ranking",
             "Access-Control-Allow-Credentials": true,
             "X-Requested-With": "XMLHttpRequest"
         },
