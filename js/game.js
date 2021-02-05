@@ -38,7 +38,31 @@ function playSound(number, time, synth) {
 
 $(document).ready(function(){
 
+    $(document).on('keypress',function(e) {
+        if(e.which >= 49 && e.which<= 57){
+            let res = (e.which - 48)
+            let colFinal = "n" + res
+            $("." + colFinal).focus()
+        }
+        if(e.which >= 97 && e.which<= 105){
+            let res = (e.which - 96)
+            let colFinal = "n" + res
+            $("." + colFinal).focus()
+        }
+    });
     $('.numbers .row .col').keydown(function(e) {
+       
+        var col = parseInt($(this).text())
+        if(e.keyCode == 40){
+            let res = (col + 3).toString()
+            let colFinal = "n" + res
+            $("." + colFinal).focus()
+        }
+        if(e.keyCode == 38){
+            let res = (col - 3).toString()
+            let colFinal = "n" + res
+            $("." + colFinal).focus()
+        }
         if (e.keyCode==39) {
           $(this).nextAll('.numbers .row .col:first').focus();
         }

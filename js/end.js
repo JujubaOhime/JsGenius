@@ -3,7 +3,6 @@ $(".score-number").text(sessionStorage.getItem("score"));
 var urlget = "https://young-reaches-88428.herokuapp.com/https://us-central1-prova-front-letras.cloudfunctions.net/ranking"
 var urlpost = "https://young-reaches-88428.herokuapp.com/https://us-central1-prova-front-letras.cloudfunctions.net/save"
 
-
 $(".form-end-game").submit(function (e) {
 
     e.preventDefault();
@@ -32,8 +31,8 @@ $(".form-end-game").submit(function (e) {
                 "Access-Control-Allow-Headers": "Origin, x-Requested-With, Content-Type, Accept, Access-Control-Request-Method,Access-Control-Request-Headers, Authorization",
             },
             success:function(response){
+                $(".score-form").val("Salvando...")
                 window.location.href = "ranking.html"
-                //console.log((response[0].name))
             },
     
         })

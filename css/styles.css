@@ -203,6 +203,11 @@ body{
 
 }
 
+.col:focus{
+	background-color: var(--accent);
+	outline: none;
+}
+
 .n7, .n8, .n9{
 	border-bottom: 3px solid var(--accent);
 }
@@ -210,6 +215,8 @@ body{
 .n3, .n6, .n9{
 	border-right: 3px solid var(--accent);
 }
+
+/*
 .col:hover{
 	transition: 0.2s;
 	background-color: var(--accent);
@@ -220,6 +227,7 @@ body{
 .col:hover p{
 	color: var(--letter1);
 }
+*/
 
 .container-number{
 	display: flex;
@@ -484,6 +492,15 @@ form input[type="submit"]:hover{
 	color: var(--accent);
 	border: 3px solid var(--accent);
 
+}
+
+.sr-only{
+	position:absolute;
+	left:-10000px;
+	top:auto;
+	width:1px;
+	height:1px;
+	overflow:hidden;
 }
 
 /* End of End-Game */
