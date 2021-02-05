@@ -81,14 +81,19 @@ $(document).ready(function(){
     var counter = 0;
     var j = 0
 
+    setTimeout(function() { 
+        $(".sk-chase").remove()
+        $(".current-number-frame p").text(randomNumber);
+        $('.current-number-frame p').fadeOut(500)
+      }, 3000);
 
-    $(".current-number-frame p").text(randomNumber);
-    $('.current-number-frame p').fadeOut(1000)
+    
     numbers.push(randomNumber)
+
+    
 
 
     $(".numbers .row .col").on('click', function () {
-
         var elem = $(this)
         elem.css('background-color', 'var(--accent)')
         setTimeout(function() {
