@@ -114,7 +114,10 @@ body{
 	padding-right: 5.55vw;
 	display: flex;
     padding-left: 5.55vw;
-    width: 100%;
+	width: 100%;
+	background: none;
+    outline: none;
+    border: none;
 }
 
 .play-game div{
@@ -151,9 +154,10 @@ body{
 	color: var(--accent);
 }
 
-/* End of index */
+#game{
+	display: none;
+}
 
-/* Game */
 
 .current-number{
 	height: calc(100vh - var(--numbers-height));
@@ -271,19 +275,6 @@ body{
 	} 
   }
 
-/*
-.col:hover{
-	transition: 0.2s;
-	background-color: var(--accent);
-	cursor: pointer;
-	transition-timing-function: ease-in-out;
-}
-
-.col:hover p{
-	color: var(--letter1);
-}
-*/
-
 .container-number{
 	display: flex;
 	justify-content: center;
@@ -294,6 +285,7 @@ body{
 	height: var(--numbers-height);
 }
 
+/* deixa o texto dos números inselecionáveis */
 .numbers .row .col{
 	-moz-user-select: none;
 	-webkit-user-select: none;
@@ -303,7 +295,7 @@ body{
 	user-select:none;
 }
 
-/* End of Game */
+/* End of index */
 
 
 /* Ranking */

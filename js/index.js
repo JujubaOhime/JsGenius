@@ -37,8 +37,9 @@ function playSound(number, time, synth) {
 };
 
 
-$(document).ready(function(){
-
+function beginGame() {
+    $("#index").remove()
+    $("#game").css("display", "unset")
     $(document).on('keypress',function(e) {
         if(e.which >= 49 && e.which<= 57){
             let res = (e.which - 48)
@@ -140,5 +141,8 @@ $(document).ready(function(){
 
 
     });
-});
+
+}
+
+   
 

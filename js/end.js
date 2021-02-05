@@ -58,6 +58,13 @@ $(".form-end-game").submit(function (e) {
             text: 'Por favor, obtenha uma pontuação',
           })
     }
+    else if(name.length >= 20){
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Apenas é permitido até 20 caracteres no nome!',
+          })
+    }
     
     
     
