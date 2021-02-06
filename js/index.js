@@ -36,6 +36,38 @@ function playSound(number, time, synth) {
 
 };
 
+function playSoundClick(number, time, synth) {
+
+    if(number == 1){
+        synth.triggerAttackRelease("C2", time);
+    }
+    else if(number == 2){
+        synth.triggerAttackRelease("D2", time);
+    }
+    else if(number == 3){
+        synth.triggerAttackRelease("E2", time);
+    }
+    else if(number == 4){
+        synth.triggerAttackRelease("F2", time);
+    }
+    else if(number == 5){
+        synth.triggerAttackRelease("G2", time);
+    }
+    else if(number == 6){
+        synth.triggerAttackRelease("A2", time);
+    }
+    else if(number == 7){
+        synth.triggerAttackRelease("B2", time);
+    }
+    else if(number == 8){
+        synth.triggerAttackRelease("C3", time);
+    }
+    else if(number == 9){
+        synth.triggerAttackRelease("D3", time);
+    }
+
+};
+
 
 function beginGame() {
     $("#index").remove()
@@ -80,11 +112,10 @@ function beginGame() {
     var score = 0
     var numbers = []
     var numbersInput = []
-    var counter = 0;
     var j = 0
-
+    let synth = new Tone.Synth().toDestination();
+    
     setTimeout(function() { 
-        let synth = new Tone.Synth().toDestination();
         playSound(randomNumber, "32n", synth)
         $(".sk-chase").remove()
         $(".current-number-frame p").text(randomNumber);
@@ -92,7 +123,7 @@ function beginGame() {
         
       }, 1500);
 
-    
+
     numbers.push(randomNumber)
 
     $(".numbers .row .col").on('click', function () {
@@ -103,10 +134,16 @@ function beginGame() {
           }, 300);
         var number = $(this).text();
         numbersInput.push(number)
+        playSoundClick(number, '16n', synth)
+
 
         if (numbers[i] != numbersInput[i]) {
-            sessionStorage.setItem("score", score)
-            window.location.href = "end.html"
+            synth.triggerAttackRelease("C2", "8n");
+            setTimeout(function() { 
+                sessionStorage.setItem("score", score)
+                window.location.href = "end.html"
+              }, 300);    
+            
         }
         i = i + 1
 
