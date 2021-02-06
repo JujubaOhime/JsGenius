@@ -58,7 +58,7 @@ else{
 }
 
 $(".sound").on('click', function () {
-    
+    $(this).blur()
     if($(this).val() == 'on'){
         $('.sound').attr('src','images/mute.svg');
         $('.sound').val('off');
@@ -156,7 +156,7 @@ function beginGame() {
             }, 300);
         }
         else {
-            
+
             playSound(number, '16n', synth, on, error)
             i = i + 1
 

@@ -112,6 +112,12 @@ body{
 
 }
 
+.icon-ranking img:active{
+	outline: 0;
+	border: none;
+	-moz-outline-style: none;
+}
+
 .logo-center{
 	display: flex;
 	justify-content: center;

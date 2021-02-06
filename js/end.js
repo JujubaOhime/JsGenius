@@ -8,6 +8,7 @@ function capitalizeFirstLetter(string) {
 }
 
 $(".form-end-game").submit(function (e) {
+    $(".score-form").blur()
 
     e.preventDefault();
 
