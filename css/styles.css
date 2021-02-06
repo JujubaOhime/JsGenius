@@ -86,7 +86,7 @@ body{
 }
 
 
-/* remove double-tap zoom on mobile */
+/* remove double-tap zoom on IOS */
 * {
 	touch-action: manipulation;
 }
