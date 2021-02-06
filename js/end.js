@@ -8,7 +8,7 @@ function capitalizeFirstLetter(string) {
 }
 
 $(".form-end-game").submit(function (e) {
-    $(".score-form").val("Salvando...")
+    
     e.preventDefault();
 
     var score = parseInt($(".score-number").text())
@@ -19,6 +19,7 @@ $(".form-end-game").submit(function (e) {
     }
     data = JSON.stringify(data)
     if(name.length > 1 && isNaN(score) == false){
+        $(".score-form").val("Salvando...")
         $.ajax({
             url: urlpost,
             type: "POST",
