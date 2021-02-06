@@ -129,19 +129,20 @@ function beginGame() {
     var error = false
 
     setTimeout(function () {
+        numbers.push(randomNumber)
         playSound(randomNumber, "32n", synth, on, error)
         $(".sk-chase").remove()
-        numbers.push(randomNumber)
         $(".current-number-frame p").text(randomNumber);
         $('.current-number-frame p').fadeOut(300)
-    }, 1500);
+    }, 1000);
 
     $(".numbers .row .col").on('click', function () {
 
         var elem = $(this)
-        elem.css('background-color', 'var(--accent)')
+        elem.addClass("col-hover")
         setTimeout(function () {
-            elem.css('background-color', 'rgba(0, 0, 0, 0)');
+            elem.removeClass('col-hover');
+            elem.blur();
         }, 300);
         var number = $(this).text();
         numbersInput.push(number)
@@ -155,6 +156,7 @@ function beginGame() {
             }, 300);
         }
         else {
+            
             playSound(number, '16n', synth, on, error)
             i = i + 1
 
@@ -163,32 +165,34 @@ function beginGame() {
                     i = 0
                     randomNumber = Math.floor(Math.random() * 9) + 1;
                     numbers.push(randomNumber);
-                    numbers.push(" ");
                     numbersInput = []
                     score = score + 1
                     j = 0;
+
                     function myLoop() {
                         setTimeout(function () {
-                            let synth = new Tone.Synth().toDestination();
-                            $('.current-number-frame p').fadeOut(0)
-                            playSound(numbers[j], "16n", synth, on, error)
-                            $('.current-number-frame p').html(numbers[j]).fadeToggle(100);
-
-                            j = j + 1
-                            if (j < numbers.length) {
-                                myLoop();
+                            if(j < numbers.length){
+                                $('.current-number-frame p').fadeOut(0)
+                                playSound(numbers[j], "16n", synth, on, error)
+                                $('.current-number-frame p').html(numbers[j]).fadeToggle(100);
+    
+                                j = j + 1
+                                
+                                if (j <= numbers.length) {
+                                    myLoop();
+                                }
                             }
+                            else{
+                                $('.current-number-frame p').fadeOut(0)
+                                $('.current-number-frame p').html(" ").fadeToggle(100);
+                            }
+                           
                         }, 400)
                     }
+
                     myLoop()
 
                 }, 400);
-
-
-            }
-            if (j == numbers.length) {
-                sleep(100)
-                numbers.pop()
             }
         }
     });

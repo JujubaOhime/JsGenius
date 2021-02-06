@@ -85,12 +85,6 @@ body{
 	font-family: 'Roboto';
 }
 
-
-/* remove double-tap zoom on IOS */
-* {
-	touch-action: manipulation;
-}
-
 /* Index */
 
 .icon-ranking{
@@ -187,7 +181,6 @@ body{
 	display: none;
 }
 
-
 .container-number{
 	display: flex;
 	justify-content: center;
@@ -245,8 +238,6 @@ body{
 	transition: 0.2s;
 	outline: none;
 	transition-timing-function:cubic-bezier(0.445, 0.05, 0.55, 0.95);
-
-
 }
 
 .col:hover{
@@ -256,6 +247,10 @@ body{
 .col:focus{
 	background-color: var(--accent);
 	outline: none;
+}
+
+.col-hover:hover{
+	background-color: var(--accent);
 }
 
 .n7, .n8, .n9{
