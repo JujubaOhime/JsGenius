@@ -61,7 +61,7 @@ table {
 		--letter2: #99A8B2;
 		--scrollbar: #c1c1c1;
 		--scrollbar-background: #fafafa;
-		
+
 		--top-icon-height: 8.66666vh;
 		--footer-play-game-height: 16.66666vh;
 		--current-number-height: 43.33vh;
@@ -90,6 +90,7 @@ body{
 .icon-ranking{
 	padding-top: 3.3vh;
 	padding-right: 3.3vh;
+	padding-left: 3.3vh;
 	height: var(--top-icon-height)
 }
 
@@ -105,7 +106,6 @@ body{
 }
 
 .icon-ranking img:hover{
-	
 	-webkit-transform: scale(0.9);
 	transform: scale(0.9);
 
@@ -140,7 +140,10 @@ body{
 }
 
 .play-game div{
+	min-height: 100%;
+	min-height: -webkit-fill-available;
 	height: 100%;
+	height: -webkit-fill-available;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -173,8 +176,6 @@ body{
   	transform: scale(0.9);
 	cursor: url("../images/cursor.svg"), auto;
 }
-
-
 
 #game{
 	display: none;
@@ -249,6 +250,9 @@ body{
 	border-right: 4px solid var(--accent);
 }
 
+
+/* Animation loading dots */
+
 .sk-chase {
 	width: 6.67vh;
     height: 6.67vh;
@@ -304,6 +308,8 @@ body{
 	} 
   }
 
+/* End animation loading dots */
+
 .container-number{
 	display: flex;
 	justify-content: center;
@@ -314,7 +320,7 @@ body{
 	height: var(--numbers-height);
 }
 
-/* deixa o texto dos números inselecionáveis */
+/* unselectable numbers */
 .numbers .row .col{
 	-moz-user-select: none;
 	-webkit-user-select: none;
@@ -511,6 +517,7 @@ body{
 }
 
 .icon-close img{
+	height: 5.33vh;
 	-webkit-transition-duration: 0.3s;
 	transition-duration: 0.3s;
 	-webkit-transition-property: transform;

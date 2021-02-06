@@ -11,7 +11,7 @@ $(".form-end-game").submit(function (e) {
 
     e.preventDefault();
 
-    var score = parseInt($(".score-number").text())
+    var score = parseInt(sessionStorage.getItem("score"))
     var name = $(".name-form").val()
     name = capitalizeFirstLetter(name)
     var data = {
@@ -22,7 +22,7 @@ $(".form-end-game").submit(function (e) {
         $(".score-form").val("Salvando...")
         $.ajax({
             url: urlpost,
-            type: "POST",
+            type: "POST",   
             dataType: "json",
             contentType: "application/xml",
             cors: true,
@@ -39,6 +39,15 @@ $(".form-end-game").submit(function (e) {
             success: function (response) {
                 window.location.href = "ranking.html"
             },
+            error: function (error) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Houve algum erro de servidor. Tente novamente mais tarde',
+                })
+                $(".score-form").val("Salvar Ranking")
+
+            }
 
         })
     }

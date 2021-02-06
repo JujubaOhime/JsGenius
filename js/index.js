@@ -3,40 +3,79 @@ function sleep(delay) {
     while (new Date().getTime() < start + delay);
 }
 
-function playSound(number, time, synth) {
+function playSound(number, time, synth, on, error) {
 
-    if (number == 1) {
-        synth.triggerAttackRelease("C4", time);
-    }
-    else if (number == 2) {
-        synth.triggerAttackRelease("D4", time);
-    }
-    else if (number == 3) {
-        synth.triggerAttackRelease("E4", time);
-    }
-    else if (number == 4) {
-        synth.triggerAttackRelease("F4", time);
-    }
-    else if (number == 5) {
-        synth.triggerAttackRelease("G4", time);
-    }
-    else if (number == 6) {
-        synth.triggerAttackRelease("A4", time);
-    }
-    else if (number == 7) {
-        synth.triggerAttackRelease("B4", time);
-    }
-    else if (number == 8) {
-        synth.triggerAttackRelease("C5", time);
-    }
-    else if (number == 9) {
-        synth.triggerAttackRelease("D5", time);
+    if (on == true){
+        if(error == true){
+            synth.triggerAttackRelease("C2", time);
+        }
+        else if (number == 1) {
+            synth.triggerAttackRelease("C4", time);
+        }
+        else if (number == 2) {
+            synth.triggerAttackRelease("D4", time);
+        }
+        else if (number == 3) {
+            synth.triggerAttackRelease("E4", time);
+        }
+        else if (number == 4) {
+            synth.triggerAttackRelease("F4", time);
+        }
+        else if (number == 5) {
+            synth.triggerAttackRelease("G4", time);
+        }
+        else if (number == 6) {
+            synth.triggerAttackRelease("A4", time);
+        }
+        else if (number == 7) {
+            synth.triggerAttackRelease("B4", time);
+        }
+        else if (number == 8) {
+            synth.triggerAttackRelease("C5", time);
+        }
+        else if (number == 9) {
+            synth.triggerAttackRelease("D5", time);
+        }
     }
 
 };
 
+let synth = new Tone.Synth().toDestination();
+
+let root = document.documentElement;
+
+var on
+
+if(sessionStorage.getItem("on") == '0'){
+    $('.sound').attr('src','images/mute.svg');
+    $('.sound').val('off');
+    on = false
+}
+else{
+    $('.sound').attr('src','images/volume.svg');
+    $('.sound').val('on');
+    on = true
+}
+
+$(".sound").on('click', function () {
+    
+    if($(this).val() == 'on'){
+        $('.sound').attr('src','images/mute.svg');
+        $('.sound').val('off');
+        sessionStorage.setItem("on", "0")
+        on = false
+    }
+    else{
+        $('.sound').attr('src','images/volume.svg');
+        $('.sound').val('on');
+        sessionStorage.setItem("on", "1")
+        on = true
+    }
+    
+});
 
 function beginGame() {
+
     $("#index").remove()
     $("#game").css("display", "unset")
 
@@ -58,7 +97,6 @@ function beginGame() {
     //keycode 38 arrow up
     //keycode 39 arrow right
     //keycode 40 arrow bottom
-
 
     $('.numbers .row .col').keydown(function (e) {
         var col = parseInt($(this).text())
@@ -83,16 +121,15 @@ function beginGame() {
 
 
     var randomNumber = Math.floor(Math.random() * 9) + 1;
-    //playSound(randomNumber, "4n", synth)
     var i = 0;
     var score = 0
     var numbers = []
     var numbersInput = []
     var j = 0
-    let synth = new Tone.Synth().toDestination();
+    var error = false
 
     setTimeout(function () {
-        playSound(randomNumber, "32n", synth)
+        playSound(randomNumber, "32n", synth, on, error)
         $(".sk-chase").remove()
         numbers.push(randomNumber)
         $(".current-number-frame p").text(randomNumber);
@@ -100,6 +137,7 @@ function beginGame() {
     }, 1500);
 
     $(".numbers .row .col").on('click', function () {
+
         var elem = $(this)
         elem.css('background-color', 'var(--accent)')
         setTimeout(function () {
@@ -109,14 +147,15 @@ function beginGame() {
         numbersInput.push(number)
 
         if (numbers[i] != numbersInput[i]) {
-            synth.triggerAttackRelease("C2", "8n");
+            error = true
+            playSound(number, "8n", synth, on, error)
             setTimeout(function () {
                 sessionStorage.setItem("score", score)
                 window.location.href = "end.html"
             }, 300);
         }
         else {
-            playSound(number, '16n', synth)
+            playSound(number, '16n', synth, on, error)
             i = i + 1
 
             if (score < numbersInput.length) {
@@ -132,7 +171,7 @@ function beginGame() {
                         setTimeout(function () {
                             let synth = new Tone.Synth().toDestination();
                             $('.current-number-frame p').fadeOut(0)
-                            playSound(numbers[j], "16n", synth)
+                            playSound(numbers[j], "16n", synth, on, error)
                             $('.current-number-frame p').html(numbers[j]).fadeToggle(100);
 
                             j = j + 1
