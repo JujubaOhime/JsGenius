@@ -188,6 +188,16 @@ body{
 }
 
 
+.container-number{
+	display: flex;
+	justify-content: center;
+	padding-right: 3.3vh;
+	padding-left: 3.3vh;
+	padding-bottom: 3.3vh;
+	align-items: center;
+	height: var(--numbers-height);
+}
+
 .current-number{
 	height: calc(100vh - var(--numbers-height));
 	display: flex;
@@ -316,15 +326,7 @@ body{
 
 /* End animation loading dots */
 
-.container-number{
-	display: flex;
-	justify-content: center;
-	padding-right: 3.3vh;
-	padding-left: 3.3vh;
-	padding-bottom: 3.3vh;
-	align-items: center;
-	height: var(--numbers-height);
-}
+
 
 /* unselectable numbers */
 .numbers .row .col{
@@ -354,7 +356,6 @@ body{
 	font-size: 4vh;
 	text-align: center;
 	margin: 0 auto;
-	
 
 }
 
@@ -448,6 +449,8 @@ body{
 	background-color: var(--scrollbar);
 }
 
+/* Animation loader ranking */
+
 .loader,
 .loader:before,
 .loader:after {
@@ -507,6 +510,9 @@ body{
     height: 5em;
   }
 }
+
+/* End animation loader ranking */
+
 /* End of ranking */
 
 /* End-Game */
@@ -615,6 +621,8 @@ form input[type="submit"]:hover{
 
 }
 
+
+/* class to screen reader only */
 .sr-only{
 	position:absolute;
 	left:-10000px;
