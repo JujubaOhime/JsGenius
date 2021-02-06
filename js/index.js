@@ -3,7 +3,6 @@ function sleep(delay) {
     while (new Date().getTime() < start + delay);
 }
 
-
 function playSound(number, time, synth) {
 
     if(number == 1){
@@ -36,42 +35,12 @@ function playSound(number, time, synth) {
 
 };
 
-function playSoundClick(number, time, synth) {
-
-    if(number == 1){
-        synth.triggerAttackRelease("C2", time);
-    }
-    else if(number == 2){
-        synth.triggerAttackRelease("D2", time);
-    }
-    else if(number == 3){
-        synth.triggerAttackRelease("E2", time);
-    }
-    else if(number == 4){
-        synth.triggerAttackRelease("F2", time);
-    }
-    else if(number == 5){
-        synth.triggerAttackRelease("G2", time);
-    }
-    else if(number == 6){
-        synth.triggerAttackRelease("A2", time);
-    }
-    else if(number == 7){
-        synth.triggerAttackRelease("B2", time);
-    }
-    else if(number == 8){
-        synth.triggerAttackRelease("C3", time);
-    }
-    else if(number == 9){
-        synth.triggerAttackRelease("D3", time);
-    }
-
-};
-
 
 function beginGame() {
     $("#index").remove()
     $("#game").css("display", "unset")
+
+    //if pressed 1-9 on keyboard or 1-9 on numlock it will focus on the number
     $(document).on('keypress',function(e) {
         if(e.which >= 49 && e.which<= 57){
             let res = (e.which - 48)
@@ -84,9 +53,16 @@ function beginGame() {
             $("." + colFinal).focus()
         }
     });
+
+    //keycode 37 arrow left
+    //keycode 38 arrow up
+    //keycode 39 arrow right
+    //keycode 40 arrow bottom
+
+    
     $('.numbers .row .col').keydown(function(e) {
-       
         var col = parseInt($(this).text())
+        //if pressed bottom, will focus on the number at the 
         if(e.keyCode == 40){
             let res = (col + 3).toString()
             let colFinal = "n" + res
@@ -105,7 +81,7 @@ function beginGame() {
         }
       });
 
-   
+
     var randomNumber = Math.floor(Math.random() * 9) + 1;
     //playSound(randomNumber, "4n", synth)
     var i = 0;
@@ -148,31 +124,35 @@ function beginGame() {
         i = i + 1
 
         if (score < numbersInput.length) {
-            i = 0
-            randomNumber = Math.floor(Math.random() * 9) + 1;
-            numbers.push(randomNumber);
-            numbers.push(" ");
-            numbersInput = []
-            score = score + 1
-            j = 0;
-            function myLoop() {
-                setTimeout(function () {
-                    let synth = new Tone.Synth().toDestination();
-                    $('.current-number-frame p').fadeOut(0)
-                    playSound(numbers[j], "16n", synth)
-                    $('.current-number-frame p').html(numbers[j]).fadeToggle(100);
-                    
-                    j = j + 1
-                    if (j < numbers.length) {
-                        myLoop();
-                    }
-                }, 400)
-            }
-            myLoop()
-
+            setTimeout(function() { 
+                i = 0
+                randomNumber = Math.floor(Math.random() * 9) + 1;
+                numbers.push(randomNumber);
+                numbers.push(" ");
+                numbersInput = []
+                score = score + 1
+                j = 0;
+                function myLoop() {
+                    setTimeout(function () {
+                        let synth = new Tone.Synth().toDestination();
+                        $('.current-number-frame p').fadeOut(0)
+                        playSound(numbers[j], "16n", synth)
+                        $('.current-number-frame p').html(numbers[j]).fadeToggle(100);
+                        
+                        j = j + 1
+                        if (j < numbers.length) {
+                            myLoop();
+                        }
+                    }, 400)
+                }
+                myLoop()
+                
+              }, 400);
+            
+            
         }
-        sleep(100)
         if (j == numbers.length) {
+            sleep(100)
             numbers.pop()
         }
 
