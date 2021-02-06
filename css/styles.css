@@ -85,6 +85,12 @@ body{
 	font-family: 'Roboto';
 }
 
+
+/* remove double-tap zoom on mobile */
+* {
+	touch-action: manipulation;
+}
+
 /* Index */
 
 .icon-ranking{
