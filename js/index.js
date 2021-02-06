@@ -134,7 +134,7 @@ function beginGame() {
           }, 300);
         var number = $(this).text();
         numbersInput.push(number)
-        playSoundClick(number, '16n', synth)
+        playSound(number, '16n', synth)
 
 
         if (numbers[i] != numbersInput[i]) {
