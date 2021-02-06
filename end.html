@@ -1,45 +1,45 @@
 <html lang="pt">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="JS G3n1u5 é um jogo de memória com objetivo de você repetir
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="JS G3n1u5 é um jogo de memória com objetivo de você repetir
          a sequência dos números mostrados! Garanta alta pontuação e 
          fique no ranking! Feito por Amélia Guerreiro">
-        <title>JS G3n1u5</title>
-        <link rel="JS G3n1u5 icon" href="images/logo.png" type="image/png">
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-        <link rel="stylesheet" type="text/css" href="css/styles.css">
-        <link rel="stylesheet" type="text/css" href="css/sweetalert2.min.css">
+    <title>JS G3n1u5</title>
+    <link rel="JS G3n1u5 icon" href="images/logo.png" type="image/png">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/sweetalert2.min.css">
 
-    </head>
+</head>
 
-    <body class="container-md">
-        <div class="icon-close">
-            <a href="index.html"><img src="images/close.svg" alt="Ícone de fechar"></a>
-        </div>
+<body class="container-md">
+    <div class="icon-close">
+        <a href="index.html"><img src="images/close.svg" alt="Ícone de fechar"></a>
+    </div>
 
-        <div class="end-game">
-            <p>Fim do Jogo</p>
-        </div>
+    <div class="end-game">
+        <p>Fim do Jogo</p>
+    </div>
 
-        <div class="score">
-            <p>score</p>
-            <p class="score-number">37</p>
-        </div>
+    <div class="score">
+        <p>score</p>
+        <p class="score-number">37</p>
+    </div>
 
-        <form action="https://us-central1-prova-front-letras.cloudfunctions.net/save" 
-        class="form-end-game" method="POST">
-            <label for="name" aria-label="Nome" class="sr-only">Nome</label>
-            <input type="text" placeholder="Digite seu nome" class="name-form" id="name" name="name" autocomplete="off">
-            <input type="submit" value="Salvar Ranking" class="score-form">
-        </form>
+    <form action="https://us-central1-prova-front-letras.cloudfunctions.net/save" class="form-end-game" method="POST">
+        <label for="name" aria-label="Nome" class="sr-only">Nome</label>
+        <input type="text" placeholder="Digite seu nome" class="name-form" id="name" name="name" autocomplete="off">
+        <input type="submit" value="Salvar Ranking" class="score-form">
+    </form>
 
-       
-    </body>
 
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
-    <script type="text/javascript" src="js/end.js"></script>
-    <script type="text/javascript" src="js/sweetalert2.min.js"></script>
+</body>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/end.js"></script>
+<script type="text/javascript" src="js/sweetalert2.min.js"></script>
 
 </html>

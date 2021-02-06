@@ -19,15 +19,15 @@ $(document).ready(function () {
             var size = response.length - 1
             var position = 0
 
-            response.sort(function(a, b){
+            response.sort(function (a, b) {
                 if (a.score > b.score) {
                     return 1;
-                  }
-                  if (a.score < b.score) {
+                }
+                if (a.score < b.score) {
                     return -1;
-                  }
-                  // a must be equal to b
-                  return 0;
+                }
+                // a must be equal to b
+                return 0;
             })
 
             for (i = size; i > -1; i--) {
@@ -36,11 +36,11 @@ $(document).ready(function () {
                 html = html + "<li class='ranking-names'> <div> <p>" + position + "</p> <p>" + response[i].name + "</p>"
                 html = html + "</div> <p class='ranking-score'>" + response[i].score + "</p> </li>"
             }
-            
+
             $(".listWrapper ul").append(html)
 
         },
-        error: function(error){
+        error: function (error) {
             $(".loader").remove()
             console.log(error)
             var html = "<p>Desculpe, não está funcionando no momento <br>"
