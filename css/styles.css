@@ -108,9 +108,9 @@ body{
 .icon-ranking img:hover{
 	-webkit-transform: scale(0.9);
 	transform: scale(0.9);
+	cursor: pointer;
 
 }
-
 
 .logo-center{
 	display: flex;
@@ -306,8 +306,6 @@ body{
   }
 
 /* End animation loading dots */
-
-
 
 /* unselectable numbers */
 .numbers .row .col{
